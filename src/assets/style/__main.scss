@@ -1,0 +1,51 @@
+body {
+    background-color: $secondary-color;
+}
+
+button {
+    border: none !important;
+    outline: none;
+}
+
+.layout {
+    width: 900px;
+    padding: 2rem;
+    border-radius: 1rem;
+    background-color: #9EB384;
+    margin: 3rem auto;
+    -webkit-box-shadow: 0px 9px 25px -1px rgba(26, 24, 24, 0.75);
+    -moz-box-shadow: 0px 9px 25px -1px rgba(26, 24, 24, 0.75);
+    box-shadow: 0px 9px 25px -1px rgba(26, 24, 24, 0.75);
+
+    // component
+    .step-navigation {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .nav-item {
+            width: 100%;
+
+            button {
+                width: inherit;
+                text-align: start;
+                background-color: #CEDEBD;
+            }
+
+            &.active {
+                button {
+                    background-color: $primary-color;
+                }
+            }
+        }
+    }
+
+    .step-item {
+        padding: 2rem;
+    }
+
+    //component
+    .step-controller {
+        margin-top: 2rem;
+    }
+}
