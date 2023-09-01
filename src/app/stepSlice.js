@@ -25,6 +25,10 @@ const initialState = {
         email: "",
         phone: "",
     },
+    step3: {
+        start_date: "",
+        end_date: "",
+    },
 }
 
 export const stepSlice = createSlice({
@@ -39,10 +43,18 @@ export const stepSlice = createSlice({
         },
         goSelected: (state, action) => {
             state.currentStep = action.payload
-        }
+        },
+        updateStep: (state, action) => {
+            console.log("payloadd", action.payload);
+            const { stateName, field, value } = action.payload
+            // state.step1.name = value
+            // state['step1']['name']
+            // state[action.payload.stateName][action.payload.field] = action.payload.value
+            state[stateName][field] = value
+        },
     }
 })
 
-export const { goNext, goPrev, goSelected } = stepSlice.actions
+export const { goNext, goPrev, goSelected, updateStep } = stepSlice.actions
 
 export default stepSlice.reducer

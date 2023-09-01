@@ -17,6 +17,7 @@ function StepNavigation() {
             {
                 list.map(item => (
                     <NavItem
+                        key={item.index}
                         text={item.text}
                         isActive={currentStep === item.index}
                         onClick={() => handleOnClick(item.index)}
